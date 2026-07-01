@@ -11,11 +11,11 @@ enum FalUsageMapper {
         if let credits = data["credits"] as? [String: Any],
            let currentBalance = ProviderParse.number(credits["current_balance"]) {
             lines.append(.values(label: "Balance", values: [
-                MetricValue(amount: currentBalance, kind: .dollars)
+                MetricValue(number: currentBalance, kind: .dollars)
             ]))
         } else if let balance = ProviderParse.number(data["current_balance"] ?? data["balance"]) {
             lines.append(.values(label: "Balance", values: [
-                MetricValue(amount: balance, kind: .dollars)
+                MetricValue(number: balance, kind: .dollars)
             ]))
         }
         

@@ -11,7 +11,7 @@ enum MagnificUsageMapper {
         // Response shape depends on their API, usually it has "total_credits_used", "total_consumed", or just "total"
         if let totalUsed = ProviderParse.number(data["total_credits_used"] ?? data["credits_consumed"] ?? data["total"] ?? data["consumed"]) {
             lines.append(.values(label: "Used (30d)", values: [
-                MetricValue(amount: totalUsed, kind: .count(suffix: " credits"))
+                MetricValue(number: totalUsed, kind: .count(suffix: " credits"))
             ]))
         } else if let usageArray = data["usage"] as? [[String: Any]], !usageArray.isEmpty {
             var sum: Double = 0
@@ -21,7 +21,7 @@ enum MagnificUsageMapper {
                 }
             }
             lines.append(.values(label: "Used (30d)", values: [
-                MetricValue(amount: sum, kind: .count(suffix: " credits"))
+                MetricValue(number: sum, kind: .count(suffix: " credits"))
             ]))
         }
         

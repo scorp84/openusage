@@ -27,7 +27,7 @@ final class MagnificProvider: ProviderRuntime {
 
     var widgetDescriptors: [WidgetDescriptor] {
         [
-            .values(id: "magnific.used", provider: provider, title: "Used", metricLabel: "Used", selection: .any, isUsagePeriod: false)
+            .values(id: "magnific.used", provider: provider, title: "Used", metricLabel: "Used", selection: .all, isUsagePeriod: false)
         ]
     }
 

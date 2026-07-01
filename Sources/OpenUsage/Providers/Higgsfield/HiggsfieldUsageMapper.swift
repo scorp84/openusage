@@ -10,7 +10,7 @@ enum HiggsfieldUsageMapper {
         
         if let balance = ProviderParse.number(data["balance"] ?? data["credit_balance"] ?? data["credits"] ?? data["available"]) {
             lines.append(.values(label: "Balance", values: [
-                MetricValue(amount: balance, kind: .dollars)
+                MetricValue(number: balance, kind: .dollars)
             ]))
         }
         
