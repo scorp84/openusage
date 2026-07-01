@@ -18,7 +18,7 @@ struct HiggsfieldUsageClient: Sendable {
             method: "GET",
             url: url,
             headers: [
-                "Authorization": "******",
+                "Authorization": "Bearer \(apiKey)",
                 "Accept": "application/json"
             ],
             timeout: 15
